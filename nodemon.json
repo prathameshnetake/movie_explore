@@ -1,0 +1,11 @@
+{
+  "watch": ["server"],
+  "ext": "ts,json",
+  "ignore": ["server/**/*.spec.ts"],
+  "exec": "npx ts-node ./server/main.ts",
+  "events": {
+    "restart": "npx kill-port 3000",
+    "crash": "npx kill-port 3000"
+  },
+  "delay": "1500"
+}
