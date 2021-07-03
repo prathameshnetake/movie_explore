@@ -76,7 +76,9 @@ export const getMovieById = async (id: number) => {
 };
 
 export const dropTable = async () => {
-  return await knexInstance.schema.dropTable("movies");
+  if (await knexInstance.schema.hasTable("movies")) {
+    return await knexInstance.schema.dropTable("movies");
+  }
 };
 
 /*
